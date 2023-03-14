@@ -1,0 +1,23 @@
+<h1>Edit Student Form</h1>
+<% puts @student.id%>
+<%=form_with  url:students_update_path, model:@student ,method:'patch' do |form|%>
+ <%=form.hidden_field :id, :value => @student.id %>
+ <div class="form-group">
+  <%=form.label :First_name %><br>
+  <%=form.text_field :fname,class:"form-control"%>
+</div>
+
+<div class="form-group">
+  <%=form.label :Last_name %><br>
+  <%=form.text_field :lname,class:"form-control"%>
+</div>
+
+<div class="form-group">
+  <%=form.label :Address %><br>
+  <%=form.text_field :address,class:"form-control"%>
+</div>
+
+<br>
+<%= form.submit class:"btn btn-success" %>
+
+<%end%>

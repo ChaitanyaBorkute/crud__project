@@ -1,0 +1,25 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%@students.each do |s|%>
+    <tr scope="row">
+      <td><%=s.fname%></td>
+      <td><%=s.lname%></td>
+      <td><%=s.address%></td>
+      <td><%= link_to 'View',:controller =>'students',:action => 'show',:id => s.id ,class:"btn btn-danger",role:"button"%></td>
+      <td><%= link_to 'Edit',:controller =>'students',:action => 'edit',:id => s.id,class:"btn btn-secondary" %></td>
+      <td><%= link_to 'Delete',:controller =>'students',:action => 'destroy',:id => s.id %></td>
+
+
+    </tr>
+    <%end%>
+  </tbody>
+</table>
